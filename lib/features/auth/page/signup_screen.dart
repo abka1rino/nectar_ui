@@ -80,7 +80,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     SizedBox(height: 10),
                     MainButton(
-                      text: 'Login',
+                      text: 'Signup',
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
                           // Handle signup logic here
