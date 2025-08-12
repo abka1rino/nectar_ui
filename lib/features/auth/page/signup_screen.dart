@@ -5,6 +5,7 @@ import 'package:nectar_ui/core/extentions/navigation.dart';
 import 'package:nectar_ui/core/utils/app_colors.dart';
 import 'package:nectar_ui/features/auth/page/login_screen.dart';
 import 'package:nectar_ui/features/auth/widgets/auth_header.dart';
+import 'package:nectar_ui/features/main/main_screen.dart';
 
 class SignupScreen extends StatefulWidget {
   SignupScreen({super.key});
@@ -15,7 +16,7 @@ class SignupScreen extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupScreen> {
   var formKey = GlobalKey<FormState>();
-
+  bool obscureText = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,11 +54,24 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     SizedBox(height: 20),
                     CustomTextFormField(
+                      obscureText: obscureText,
                       labelText: 'Password',
                       onChanged: (value) {},
-                      suffixIcon: Icon(
-                        Icons.remove_red_eye,
-                        color: AppColors.primaryColor,
+                      suffixIcon: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            obscureText = !obscureText;
+                          });
+                        },
+                        child: Transform.flip(
+                          flipX: true,
+                          child: Icon(
+                            obscureText
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                            color: AppColors.primaryColor,
+                          ),
+                        ),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -83,7 +97,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       text: 'Signup',
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
-                          // Handle signup logic here
+                          pushWithReplacement(context, MainScreen());
                         }
                       },
                     ),
