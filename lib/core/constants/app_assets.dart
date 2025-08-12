@@ -17,4 +17,10 @@ class AppAssets {
   static const String spritePng = 'assets/images/products/sprite.png';
   static const String dietColaPng = 'assets/images/products/dietCola.png';
   static const String pepsiPng = 'assets/images/products/pepsi.png';
+  static const String bakeryPng = 'assets/images/categories/bakery.png';
+  static const String beveragesPng = 'assets/images/categories/beverages.png';
+  static const String dairyPng = 'assets/images/categories/dairy.png';
+  static const String fruitsPng = 'assets/images/categories/fruits.png';
+  static const String oilPng = 'assets/images/categories/oils.png';
+  static const String meatPng = 'assets/images/categories/meat.png';
 }
