@@ -12,6 +12,13 @@ class Product {
     required this.subtitle,
     required this.price,
   });
+  static double gettotal(List<Product> products) {
+    double totalPrice = 0.0;
+    for (var product in products) {
+      totalPrice += double.parse(product.price.replaceAll('\$', ''));
+    }
+    return totalPrice;
+  }
 }
 
 List<Product> exclusiveProducts = [

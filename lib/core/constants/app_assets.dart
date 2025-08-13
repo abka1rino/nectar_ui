@@ -23,4 +23,22 @@ class AppAssets {
   static const String fruitsPng = 'assets/images/categories/fruits.png';
   static const String oilPng = 'assets/images/categories/oils.png';
   static const String meatPng = 'assets/images/categories/meat.png';
+  static const String profilePhotoPng = 'assets/images/profilePhoto.png';
+  static const String pinclePng = 'assets/images/pincle.svg';
+  static const String bellPng =
+      'assets/icons/account_screen_icons/Bell icon.png';
+  static const String DeliceryaddressPng =
+      'assets/icons/account_screen_icons/Delicery address.png';
+  static const String orderPng =
+      'assets/icons/account_screen_icons/Orders icon.png';
+  static const String paymentPng =
+      'assets/icons/account_screen_icons/Payment.png';
+  static const String helpPng =
+      'assets/icons/account_screen_icons/help icon.png';
+  static const String detailsPng =
+      'assets/icons/account_screen_icons/My Details icon.png';
+  static const String voucherPng =
+      'assets/icons/account_screen_icons/voucher.png';
+  static const String aboutPng =
+      'assets/icons/account_screen_icons/about icon.png';
 }

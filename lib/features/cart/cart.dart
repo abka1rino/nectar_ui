@@ -4,12 +4,8 @@ import 'package:nectar_ui/features/cart/widgets/myCart_product_card.dart';
 import 'package:nectar_ui/features/home/models/product_model.dart';
 
 class CartScreen extends StatelessWidget {
-  double totalPrice = 0.0;
   @override
   Widget build(BuildContext context) {
-    for (var product in exclusiveProducts) {
-      totalPrice += double.parse(product.price.replaceAll('\$', ''));
-    }
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -53,7 +49,8 @@ class CartScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: MainButton(
-              text: 'GO to Checkout              $totalPrice',
+              text:
+                  'GO to Checkout            \$${Product.gettotal(exclusiveProducts)}',
               onPressed: () {},
             ),
           ),
