@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:nectar_ui/core/utils/app_colors.dart';
 
 class CustomSearchTextFormField extends StatelessWidget {
   const CustomSearchTextFormField({

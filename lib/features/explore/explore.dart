@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:nectar_ui/components/inputs/custom_search_text_form_field.dart';
-import 'package:nectar_ui/core/constants/app_assets.dart';
-import 'package:nectar_ui/core/utils/app_colors.dart';
 import 'package:nectar_ui/features/explore/models/category_model.dart';
 import 'package:nectar_ui/features/explore/widgets/category_card.dart';
-import 'package:nectar_ui/features/home/models/product_model.dart';
-import 'package:nectar_ui/features/home/widgets/collection_header.dart';
-import 'package:nectar_ui/features/home/widgets/exclusive_product_card.dart';
 
 class ExploreScreen extends StatelessWidget {
   @override
