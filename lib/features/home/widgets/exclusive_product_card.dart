@@ -41,19 +41,13 @@ class ExclusiveCard extends StatelessWidget {
                   product.price,
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                 ),
-                GestureDetector(
-                  onTap: () {
+                FloatingActionButton(
+                  elevation: 0,
+                  onPressed: () {
                     // Handle add to cart action
                   },
-                  child: Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: AppColors.primaryColor,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Icon(Icons.add, color: Colors.white, size: 20),
-                  ),
+                  child: Icon(Icons.add, color: Colors.white),
+                  backgroundColor: AppColors.primaryColor,
                 ),
               ],
             ),
