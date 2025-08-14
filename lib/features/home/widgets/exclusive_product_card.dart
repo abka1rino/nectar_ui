@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_ui/core/utils/app_colors.dart';
 import 'package:nectar_ui/features/home/models/product_model.dart';
+import 'package:nectar_ui/features/services/product_service.dart';
 
 class ExclusiveCard extends StatelessWidget {
   const ExclusiveCard({super.key, required this.product});
@@ -44,7 +45,13 @@ class ExclusiveCard extends StatelessWidget {
                 FloatingActionButton(
                   elevation: 0,
                   onPressed: () {
-                    // Handle add to cart action
+                    ProductService.addToCart(product, cartItems, cartItemCount);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('${product.title} added to cart!'),
+                        duration: Duration(seconds: 2),
+                      ),
+                    );
                   },
                   child: Icon(Icons.add, color: Colors.white),
                   backgroundColor: AppColors.primaryColor,

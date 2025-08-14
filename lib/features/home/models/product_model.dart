@@ -77,3 +77,5 @@ List<Product> exclusiveProducts = [
     price: '\$1.50',
   ),
 ];
+List<Product> cartItems = [];
+List<int> cartItemCount = [];

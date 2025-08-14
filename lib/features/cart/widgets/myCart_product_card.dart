@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_ui/core/utils/app_colors.dart';
 import 'package:nectar_ui/features/home/models/product_model.dart';
+import 'package:nectar_ui/features/services/product_service.dart';
 
 class MyCartProductCard extends StatelessWidget {
-  const MyCartProductCard({super.key, required this.product});
+  const MyCartProductCard({
+    super.key,
+    required this.product,
+    required this.onRemove,
+    required this.itemCount,
+    required this.onChange,
+  });
   final Product product;
+  final int itemCount;
+  final VoidCallback onRemove;
+  final VoidCallback onChange;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -32,34 +43,54 @@ class MyCartProductCard extends StatelessWidget {
               SizedBox(height: 15),
               Row(
                 children: [
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xFFE2E2E2)),
-                      borderRadius: BorderRadius.circular(17),
-                    ),
-                    child: Icon(
-                      Icons.remove,
-                      color: AppColors.greyColor,
-                      size: 20,
+                  GestureDetector(
+                    onTap: () {
+                      ProductService.minusProduct(
+                        product,
+                        cartItems,
+                        cartItemCount,
+                      );
+                      onChange();
+                    },
+                    child: Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Color(0xFFE2E2E2)),
+                        borderRadius: BorderRadius.circular(17),
+                      ),
+                      child: Icon(
+                        Icons.remove,
+                        color: AppColors.greyColor,
+                        size: 20,
+                      ),
                     ),
                   ),
                   SizedBox(width: 20),
-                  Text('1'),
+                  Text(itemCount.toString()),
                   SizedBox(width: 20),
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xFFE2E2E2)),
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(17),
-                    ),
-                    child: Icon(
-                      Icons.add,
-                      color: AppColors.primaryColor,
-                      size: 20,
+                  GestureDetector(
+                    onTap: () {
+                      ProductService.addToCart(
+                        product,
+                        cartItems,
+                        cartItemCount,
+                      );
+                      onChange();
+                    },
+                    child: Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Color(0xFFE2E2E2)),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(17),
+                      ),
+                      child: Icon(
+                        Icons.add,
+                        color: AppColors.primaryColor,
+                        size: 20,
+                      ),
                     ),
                   ),
                 ],
@@ -69,7 +100,10 @@ class MyCartProductCard extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Icon(Icons.close, color: AppColors.greyColor, size: 24),
+              GestureDetector(
+                child: Icon(Icons.close, color: AppColors.greyColor, size: 24),
+                onTap: onRemove,
+              ),
               SizedBox(height: 40),
               Text(
                 product.price,
