@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_ui/core/services/product_service.dart';
 import 'package:nectar_ui/core/utils/app_colors.dart';
 import 'package:nectar_ui/features/home/models/product_model.dart';
-import 'package:nectar_ui/features/services/product_service.dart';
 
 class ExclusiveCard extends StatelessWidget {
   const ExclusiveCard({super.key, required this.product});
