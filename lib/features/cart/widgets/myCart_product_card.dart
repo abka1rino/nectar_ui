@@ -61,7 +61,9 @@ class MyCartProductCard extends StatelessWidget {
                       ),
                       child: Icon(
                         Icons.remove,
-                        color: AppColors.greyColor,
+                        color: itemCount == 1
+                            ? AppColors.greyColor
+                            : AppColors.primaryColor,
                         size: 20,
                       ),
                     ),
