@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nectar_ui/components/buttons/main_button.dart';
 import 'package:nectar_ui/features/cart/widgets/myCart_product_card.dart';
 import 'package:nectar_ui/features/home/models/product_model.dart';
-import 'package:nectar_ui/features/services/product_service.dart';
+import 'package:nectar_ui/core/services/product_service.dart';
 
 class CartScreen extends StatefulWidget {
   @override
