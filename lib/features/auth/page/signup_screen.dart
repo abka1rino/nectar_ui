@@ -117,20 +117,34 @@ class _SignupScreenState extends State<SignupScreen> {
                               ),
                               onPressed: () {},
                               child: Text(
-                                'Privacy Policy ',
+                                'Terms of Service ',
                                 style: TextStyle(color: AppColors.primaryColor),
                               ),
                             ),
                             style: TextStyle(color: AppColors.primaryColor),
                           ),
                           TextSpan(
-                            text: 'By continuing you agree to our ',
+                            text: 'and ',
                             style: TextStyle(color: AppColors.greyColor),
+                          ),
+                          WidgetSpan(
+                            alignment: PlaceholderAlignment.middle,
+                            child: TextButton(
+                              style: TextButton.styleFrom(
+                                padding: EdgeInsets.zero,
+                              ),
+                              onPressed: () {},
+                              child: Text(
+                                'Privacy Policy',
+                                style: TextStyle(color: AppColors.primaryColor),
+                              ),
+                            ),
+                            style: TextStyle(color: AppColors.primaryColor),
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(height: 25),
+                    SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

@@ -14,7 +14,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  List<Widget> _screens = [
+  final List<Widget> _screens = [
     HomeScreen(),
     ExploreScreen(),
     CartScreen(),

@@ -95,35 +95,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         }
                       },
                     ),
-                    SizedBox(height: 10),
-                    RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: 'By continuing you agree to our ',
-                            style: TextStyle(color: AppColors.greyColor),
-                          ),
-                          WidgetSpan(
-                            alignment: PlaceholderAlignment.middle,
-                            child: TextButton(
-                              style: TextButton.styleFrom(
-                                padding: EdgeInsets.zero,
-                              ),
-                              onPressed: () {},
-                              child: Text(
-                                'Privacy Policy ',
-                                style: TextStyle(color: AppColors.primaryColor),
-                              ),
-                            ),
-                            style: TextStyle(color: AppColors.primaryColor),
-                          ),
-                          TextSpan(
-                            text: 'By continuing you agree to our ',
-                            style: TextStyle(color: AppColors.greyColor),
-                          ),
-                        ],
-                      ),
-                    ),
                     SizedBox(height: 25),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
