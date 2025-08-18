@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_ui/components/buttons/main_button.dart';
+import 'package:nectar_ui/features/cart/widgets/modal_bottom_sheet.dart';
 import 'package:nectar_ui/features/cart/widgets/myCart_product_card.dart';
 import 'package:nectar_ui/features/home/models/product_model.dart';
 import 'package:nectar_ui/core/services/product_service.dart';
 
 class CartScreen extends StatefulWidget {
+  const CartScreen({super.key});
+
   @override
   State<CartScreen> createState() => _CartScreenState();
 }
@@ -73,7 +76,20 @@ class _CartScreenState extends State<CartScreen> {
             child: MainButton(
               text:
                   'GO to Checkout            \$${ProductService.totalPrice(cartItems, cartItemCount).toString()}',
-              onPressed: () {},
+              onPressed: () {
+                if (cartItems.isNotEmpty) {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return ModalBottomSheet();
+                    },
+                  );
+                } else {
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(SnackBar(content: Text('Your cart is empty')));
+                }
+              },
             ),
           ),
           SizedBox(height: 20),

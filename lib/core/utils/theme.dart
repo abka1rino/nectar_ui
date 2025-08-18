@@ -3,6 +3,7 @@ import 'package:nectar_ui/core/utils/app_colors.dart';
 
 class AppThemes {
   static ThemeData lightTheme = ThemeData(
+    fontFamily: 'Poppins',
     inputDecorationTheme: InputDecorationTheme(
       labelStyle: TextStyle(
         color: AppColors.greyColor,

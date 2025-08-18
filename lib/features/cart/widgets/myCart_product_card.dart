@@ -108,7 +108,7 @@ class MyCartProductCard extends StatelessWidget {
               ),
               SizedBox(height: 40),
               Text(
-                product.price,
+                '\$${(double.parse(product.price.replaceAll('\$', '')) * itemCount).toString()}',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
               ),
             ],
