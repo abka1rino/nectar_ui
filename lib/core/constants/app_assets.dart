@@ -44,4 +44,6 @@ class AppAssets {
   static const String welcomePng = 'assets/images/welcome.png';
   static const String completedSvg = 'assets/images/completed.svg';
   static const String mixerSvg = 'assets/icons/mixer.svg';
+  static const String emptyCart = 'assets/images/Empty red.json';
+  static const String noItems = 'assets/images/non data found.json';
 }

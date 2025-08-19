@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:lottie/lottie.dart';
 import 'package:nectar_ui/core/constants/app_assets.dart';
 import 'package:nectar_ui/features/explore/models/category_model.dart';
 import 'package:nectar_ui/features/home/models/product_model.dart';
@@ -47,20 +48,30 @@ class CategoryScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              GridView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 12.0,
-                  mainAxisSpacing: 12.0,
-                  childAspectRatio: .80,
-                ),
-                itemCount: filteredProducts.length,
-                itemBuilder: (context, index) {
-                  return ExclusiveCard(product: filteredProducts[index]);
-                },
-              ),
+              filteredProducts.isEmpty
+                  ? Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(height: 150),
+                          Lottie.asset(AppAssets.noItems),
+                        ],
+                      ),
+                    )
+                  : GridView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 12.0,
+                        mainAxisSpacing: 12.0,
+                        childAspectRatio: .80,
+                      ),
+                      itemCount: filteredProducts.length,
+                      itemBuilder: (context, index) {
+                        return ExclusiveCard(product: filteredProducts[index]);
+                      },
+                    ),
             ],
           ),
         ),

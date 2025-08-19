@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_ui/core/extentions/navigation.dart';
+import 'package:nectar_ui/features/details%20screen/details_screen.dart';
 import 'package:nectar_ui/features/home/models/product_model.dart';
 
 class FavouriteProductCard extends StatelessWidget {
@@ -40,7 +42,12 @@ class FavouriteProductCard extends StatelessWidget {
           SizedBox(width: 10),
           Transform.flip(
             flipX: true,
-            child: Icon(Icons.arrow_back_ios, size: 20),
+            child: IconButton(
+              icon: Icon(Icons.arrow_back_ios, size: 20),
+              onPressed: () {
+                pushTo(context, DetailsScreen(product: product));
+              },
+            ),
           ),
         ],
       ),

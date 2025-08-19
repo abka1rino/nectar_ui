@@ -90,3 +90,4 @@ List<Product> exclusiveProducts = [
 ];
 List<Product> cartItems = [];
 List<int> cartItemCount = [];
+List<Product> favoriteItems = [];

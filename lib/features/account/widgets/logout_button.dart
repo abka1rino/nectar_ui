@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_ui/core/extentions/navigation.dart';
 import 'package:nectar_ui/core/utils/app_colors.dart';
+import 'package:nectar_ui/features/auth/page/login_screen.dart';
 
 class LogoutButton extends StatelessWidget {
   const LogoutButton({super.key});
@@ -18,7 +20,9 @@ class LogoutButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(19),
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+            pushUntil(context, LoginScreen());
+          },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [

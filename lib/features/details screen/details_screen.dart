@@ -40,12 +40,7 @@ class _State extends State<DetailsScreen> {
                       ),
                       Spacer(),
                       IconButton(
-                        icon: Icon(
-                          Icons.ios_share,
-                          color: isFavorite
-                              ? AppColors.primaryColor
-                              : AppColors.greyColor,
-                        ),
+                        icon: Icon(Icons.ios_share),
                         onPressed: () {
                           // Navigate to cart screen
                         },
@@ -87,16 +82,19 @@ class _State extends State<DetailsScreen> {
                         textAlign: TextAlign.start,
                       ),
                       IconButton(
-                        icon: SvgPicture.asset(
-                          AppAssets.favouriteSvg,
-                          colorFilter: isFavorite
-                              ? ColorFilter.mode(
-                                  AppColors.primaryColor,
-                                  BlendMode.srcIn,
-                                )
-                              : ColorFilter.mode(Colors.black, BlendMode.srcIn),
+                        icon: Icon(
+                          isFavorite ? Icons.favorite : Icons.favorite_border,
+                          color: isFavorite
+                              ? AppColors.primaryColor
+                              : Colors.black,
+                          size: 25,
                         ),
                         onPressed: () {
+                          if (isFavorite) {
+                            favoriteItems.remove(widget.product);
+                          } else {
+                            favoriteItems.add(widget.product);
+                          }
                           setState(() {
                             isFavorite = !isFavorite;
                           });

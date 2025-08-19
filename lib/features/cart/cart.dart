@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_ui/components/buttons/main_button.dart';
+import 'package:nectar_ui/core/constants/app_assets.dart';
 import 'package:nectar_ui/features/cart/widgets/modal_bottom_sheet.dart';
 import 'package:nectar_ui/features/cart/widgets/myCart_product_card.dart';
 import 'package:nectar_ui/features/home/models/product_model.dart';
 import 'package:nectar_ui/core/services/product_service.dart';
+import 'package:lottie/lottie.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -43,7 +45,14 @@ class _CartScreenState extends State<CartScreen> {
             color: Color(0xFFE0E0E0),
           ),
           cartItems.isEmpty
-              ? Expanded(child: SizedBox(height: 10))
+              ? Expanded(
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [Lottie.asset(AppAssets.emptyCart)],
+                    ),
+                  ),
+                )
               : Expanded(
                   child: ListView.separated(
                     itemCount: cartItems.length,
