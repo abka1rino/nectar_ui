@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_ui/category%20screeen/category_screen.dart';
+import 'package:nectar_ui/core/extentions/navigation.dart';
 import 'package:nectar_ui/features/explore/models/category_model.dart';
 
 class CategoryCard extends StatelessWidget {
@@ -8,7 +10,7 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Handle category tap
+        pushTo(context, CategoryScreen(category: category));
       },
       child: Container(
         width: 173,

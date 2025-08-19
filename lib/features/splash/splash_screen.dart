@@ -3,8 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:nectar_ui/core/constants/app_assets.dart';
 import 'package:nectar_ui/core/extentions/navigation.dart';
 import 'package:nectar_ui/core/utils/app_colors.dart';
-import 'package:nectar_ui/features/auth/page/location_page.dart';
-import 'package:nectar_ui/features/welcome_screen/welcom_screen.dart';
+import 'package:nectar_ui/features/welcome_screen/welcome_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

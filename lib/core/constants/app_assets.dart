@@ -43,4 +43,5 @@ class AppAssets {
       'assets/icons/account_screen_icons/about icon.png';
   static const String welcomePng = 'assets/images/welcome.png';
   static const String completedSvg = 'assets/images/completed.svg';
+  static const String mixerSvg = 'assets/icons/mixer.svg';
 }
