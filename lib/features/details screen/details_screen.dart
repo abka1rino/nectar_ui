@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nectar_ui/components/buttons/main_button.dart';
-import 'package:nectar_ui/core/constants/app_assets.dart';
 import 'package:nectar_ui/core/services/product_service.dart';
 import 'package:nectar_ui/core/utils/app_colors.dart';
 import 'package:nectar_ui/features/home/models/product_model.dart';
