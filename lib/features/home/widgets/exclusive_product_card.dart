@@ -17,7 +17,7 @@ class ExclusiveCard extends StatelessWidget {
       },
       child: Container(
         width: 173,
-        height: 200,
+        height: 220,
         decoration: BoxDecoration(
           color: Color(0xFFE2E2E2),
           borderRadius: BorderRadius.circular(18),

@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
               CollectionHeader(title: 'Exclusive', buttonText: 'See All'),
               SizedBox(height: 8.0),
               SizedBox(
-                height: 200,
+                height: 220,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemCount: exclusiveProducts.length,
@@ -62,7 +62,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisCount: 2,
                   crossAxisSpacing: 12.0,
                   mainAxisSpacing: 12.0,
-                  childAspectRatio: .91,
+                  childAspectRatio: .78,
                 ),
                 itemCount: exclusiveProducts.length,
                 itemBuilder: (context, index) {
